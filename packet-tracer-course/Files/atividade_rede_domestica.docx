@@ -1,0 +1,185 @@
+Packet Tracer – Criar uma Rede Simples
+
+Objetivos
+Nesta atividade, você criará uma rede simples no Logical Workspace do Packet Tracer .
+
+Parte 1: construir uma rede simples
+
+Parte 2: Configurar os End Devices e Verificar a Conectividade
+
+Instruções
+Parte 1: Construa uma rede simples.
+Nesta parte, você criará uma rede simples implantando e conectando os dispositivos de rede no Logical Workspace.
+
+Passo 1: Adicione dispositivos de rede ao ambiente de trabalho.
+Nesta etapa, você adicionará um PC, um laptop e um cable modem ao Logical Workspace.
+
+Um cable modem é um dispositivo de hardware que permite a comunicação com um provedor de serviços de Internet (ISP). O cabo coaxial do ISP está conectado ao cable modem, e um cabo Ethernet da rede local também está conectado. O cable modem converte a conexão coaxial em uma conexão Ethernet.
+
+Usando a caixa de seleção Tipo de dispositivo, adicione os seguintes dispositivos à área de trabalho. A categoria e a subcategoria associadas ao dispositivo estão listadas abaixo:
+
+=   PC: End Devices > End Devices > PC
+
+=   Laptop: End Devices > End Devices > Laptop
+
+=   Cable Modem: Network Devices> WAN Emulation> Cable Modem
+
+Passo 2: Altere os nomes de exibição dos dispositivos de rede.
+a.   Para alterar os nomes de exibição dos dispositivos de rede, clique no ícone de dispositivo no Logical Workspace.
+
+b.   Clique na guia Config na janela de dispositivos da nuvem.
+
+c.   Insira o novo nome do dispositivo recém-adicionado no campo Nome para exibição: PC, Laptop e Cable Modem.
+
+Etapa 3: Adicionar o cabeamento físico entre dispositivos no ambiente de trabalho
+Usando a caixa de seleção de dispositivos, adicione o cabeamento físico entre dispositivos no ambiente de trabalho, como mostrado no diagrama da topologia.
+
+a.  O computador precisará de um cabo straight-through de cobre para se conectar ao roteador sem fio. Usando a Caixa de seleção de tipo de dispositivo, clique em Conexões (ícone de um raio). Selecione o cabo de cobre straight-through na caixa de seleção de dispositivos e conecte-o à interface FastEthernet 0 do computador e à interface Ethernet 1 do roteador sem fio
+
+b.   O roteador sem fio precisará de um cabo straight-through para se conectar ao cable modem. Selecione o cabo straight-through na caixa de seleção de dispositivos e conecte-o à interface de Internet do roteador sem fio e à interface de Porta 1 do cable modem.
+
+c.   O cable modem precisará de um cabo coaxial para conectar-se à nuvem da Internet. Selecione o cabo coaxial na caixa de seleção de dispositivos e conecte-o à interface da Porta 0 do cable modem e à interface coaxial 7da nuvem da Internet.
+
+Parte 2: Configurar os End Devices e Verificar a Conectividade
+Nesta parte, você conectará um PC e um laptop ao roteador sem fio. O PC será conectado à rede usando um cabo Ethernet. No notebook, você substituirá a placa de interface de rede com fio (NIC) por uma NIC sem fio e conectará o laptop ao roteador sem fio.
+
+Depois que os dois End Devices estiverem conectados à rede, você verificará a conectividade com cisco.srv. Ao PC e ao laptop será atribuído um endereço IP (Internet Protocol). O IP (Internet Protocol) é um conjunto de regras para roteamento e endereçamento de dados na Internet. Os endereços IP são usados para identificar os dispositivos em uma rede e permitir que os dispositivos se conectem e transfiram dados em uma rede.
+
+Etapa 1: Configurar o computador
+Você vai configurar o PC para a rede com fio nesta etapa.
+
+a.   Clique em PC. Na guia Desktop , navegue até IP Configuration para verificar se o DHCP está ativado e se o PC recebeu um endereço IP.
+
+Selecione DHCP em IP Configuration se um endereço IP não estiver configurado no campo Endereço IPv4. Observe o processo enquanto o PC está recebendo um endereço IP do servidor DHCP.
+
+DHCP - Protocolo de configuração de host dinâmico (Dynamic Host Configuration Protocol). Esse protocolo atribui endereços IP aos dispositivos de forma dinâmica. Nessa rede simples, o Roteador sem fio é configurado para atribuir endereços IP a dispositivos que solicitam endereços IP. Se o DHCP estiver desativado, você precisará atribuir um endereço IP e configurar todas as informações necessárias para se comunicar com outros dispositivos na rede e na Internet.
+
+b.   Fechar IP Configuration. Na guia Desktop , clique em Command Prompt.
+
+c.   No prompt, digite ipconfig / all para verificar as informações de endereçamento IPv4 do servidor DHCP. O computador deve receber um endereço IPv4 no intervalo 192.168.0.x.
+
+Observação: existem dois tipos de endereços IP: IPv4 e IPv6. Um endereço IPv4 (Internet Protocol versão 4) é uma sequência de números no formato x.x.x.x, como você usou neste laboratório. À medida que a Internet cresceu, tornou-se necessário ter mais endereços IP. Então, o IPv6 (protocolo de Internet versão 6) foi introduzido no final dos anos 90 para abordar as limitações do IPv4. Os detalhes do endereçamento IPv6 estão além do escopo dessa atividade.
+
+d.   Teste a conectividade com o cisco.srv do PC. Do command prompt, digitando o comando ping cisco.srv. Pode levar alguns segundos para que o ping retorne. Quatro respostas devem ser recebidas, como mostrado na figura.
+
+Etapa 2: Configurar o notebook.
+Nesta etapa você irá configurar o notebook para acessar a rede sem fio.
+
+a.   Clique em Laptop e selecione a guia Physical.
+
+b.   Na guia Physical será necessário remover o módulo de cobre da Ethernet e substituí-lo com o módulo WPC300N sem fio.
+
+1)   Por fim ligue o notebook novamente, clicando no botão Liga/Desliga do notebook novamente.
+
+2)   Em seguida, remova o módulo de cobre da Ethernet atualmente instalado clicando no módulo na lateral do notebook e arrastando-o para o painel MODULES à esquerda da janela do notebook.
+
+3)   Depois, instale o módulo WPC300N sem fio clicando nele no painel MODULES e arrastando-o para a porta do módulo vazia na lateral do notebook.
+
+4)   Por fim ligue o notebook novamente, clicando no botão Liga/Desliga do notebook novamente.
+
+c.   Com o módulo sem fio instalado, a próxima tarefa é conectar o notebook à rede sem fio. Clique na guia Desktop e clique em PC Wireless.
+
+d.   Selecione a guia Connect. Após um breve atraso, a rede sem fio HomeNetwork estará visível na lista de redes sem fio. Clique em Refresh (Atualizar) se necessário para ver a lista de redes disponíveis. Selecione HomeNetwork. Clique em Conectar.
+
+e.   Feche a janela PC Wireless. Selecione a guia Desktop e abra o Web Browser.
+
+f.     No navegador da Web, acesse cisco.srv.
+
+Reflexão
+Agora que você verificou a conectividade com o cisco.srv, use o comando ipconfig do prompt de comando para preencher a tabela de endereçamento IP abaixo:
+
+Dispositivo
+
+Endereço IPv4
+
+Máscara de sub-rede
+
+Gateway padrão
+
+PC
+
+Área de resposta
+Digite sua resposta aqui.
+Área de resposta
+Digite sua resposta aqui.
+Área de resposta
+Digite sua resposta aqui.
+Laptop
+
+Área de resposta
+Digite sua resposta aqui.
+Área de resposta
+Digite sua resposta aqui.
+Área de resposta
+Digite sua resposta aqui.
+Linha em branco, sem informações adicionais
+
+Dispositivo
+
+Endereço IPv4
+
+Máscara de sub-rede
+
+Gateway padrão
+
+PC
+
+192.168.0.2
+
+255.255.255.0
+
+192.168.0.1
+
+Laptop
+
+192.168.0.3
+
+255.255.255.0
+
+192.168.0.1
+
+![image](https://github.com/micvet/quality-assurance/assets/86981990/41526458-d586-4ba8-9439-47a712e25360)
+
+
+Os endereços IP para os End Devices podem variar de 192.168.0.2 a 192.168.0.254. Cada NIC terá um endereço IP exclusivo na mesma rede.
+
+A máscara de sub-rede IPv4 é usada para diferenciar a parte da rede da parte do host de um endereço IPv4. Você pode relacionar o endereço IP ao número da sua casa. 
+  O comprimento da máscara de sub-rede ao nome da rua onde fica sua casa. A parte do endereço de rede é sua rua, 192.168.0. O número da porta é a porta do host do endereço IP. 
+  Para o endereço IP 192.168.0.2, o número da casa é 2 e a rua é 192.168.0. Se houver mais de uma casa na mesma rua, por exemplo, número da casa 3, terá um endereço 192.168.0.3. 
+    O número máximo de casas nesta rua é 253, variando de 2 a 254.
+
+O gateway padrão é análogo ao cruzamento de rua. O tráfego da rua 192.168.0 precisa sair pelo cruzamento para outra rua. Outra rua é outra rede. 
+Nessa rede, o gateway padrão é o roteador sem fio que direciona o tráfego da rede local para o modem a cabo, e o tráfego é enviado para o ISP.
+
+
+RESUMO
+MODULO 1
+
+Neste módulo, você aprendeu sobre como usar o Cisco Packet Tracer para explorar a rede sem ter que comprar equipamentos ou, potencialmente, interromper uma rede atual. 
+O Packet Tracer (PT) simula redes domésticas simples, redes de escritório, redes de IoT e até mesmo redes empresariais complexas. 
+O Packet Tracer pode ser usado para visualizar uma rede como uma topologia lógica e como uma representação da rede física.
+
+Este módulo contém vários vídeos que você pode acessar para melhorar suas habilidades no PT e seus conhecimentos de rede. Você explorou recursos adicionais do PT, inclusive a configuração de dispositivos 
+usando a guia Config, específica do PT, além de aprender os comandos CLI equivalentes para configurar dispositivos. Para alguns dispositivos finais, a guia Área de trabalho oferece acesso à configuração de IP, 
+configuração sem fio, prompt de comando, navegador Web e outras aplicações. Os servidores têm uma guia de Serviços que permite que um servidor seja configurado com processos de servidor comuns, como HTTP, DHCP, 
+DNS etc.
+
+Você baixou e instalou o Cisco Packet Tracer para poder concluir a atividade tutorada do Packet Tracer - Exploração dos modos físico e lógico, que contém um sistema de dicas e um tutorial integrado. 
+Outros PTTAs contém sistemas de sugestões, mas não tem tutorial.
+
+MODULO 2
+
+Neste módulo, você aprendeu que há mais de um tipo de arquivo do Packet Tracer. Esses tipos de arquivo são usados para diferentes fins e incluem: .pka, .pkt, .pksz e.pkz.
+
+O tipo de arquivo .pka é um arquivo de atividade do Packet Tracer e é o tipo de arquivo que você experimentará com mais frequência. O arquivo .pka tem uma janela de instruções. 
+         Normalmente, a atividade também é pontuada. Esse tipo de arquivo contém duas redes: uma rede inicial e uma rede com as respostas. 
+         O tipo de arquivo .pkt é criado quando uma rede simulada é criada no Packet Tracer e salva. O arquivo .pkt não tem janela de instruções ou pontuação de atividade.
+
+Você já sabe o que é um arquivo .pksz porque o usou para o PTTA - Exploração dos modos físico e lógico no Módulo 1. 
+         Esses arquivos incluem um arquivo .pka, recursos de mídia e um arquivo de script para o sistema de dicas. 
+         Essas atividades oferecem suporte, na forma de dicas contextualizadas, para os alunos que estão trabalhando para concluir a atividade. O arquivo .pkz não é mais usado. 
+         Você também aprendeu sobre o Packet Tracer Media Object (PTMO) e a Packet Tracer Skills Assessment (PTSA), ambos são usados para fins de avaliação.
+
+Este módulo também incluiu vídeos de instruções para ajudá-lo a concluir a atividade do Packet Tracer - Criar uma rede simples. Nesse .pka 
+         você usou o modo lógico para construir uma rede, configurar dispositivos finais e verificar a conectividade. E, finalmente, outro vídeo demonstrou alguns dos recursos avançados do 
+         Cisco Packet Tracer. Recomendamos que você abra o Cisco Packet Tracer e continue explorando!
