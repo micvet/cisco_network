@@ -69,9 +69,11 @@ A janela de instruções de Atividade do Packet Tracer fornece os procedimentos 
 
 ## Tipos de itens de avaliação
 
-Existem dois tipos de itens de avaliação no Packet Tracer: Packet Tracer Media Objetos (PTMO) e as avaliações de habilidades do Packet Tracer (PTSA). PTMOs podem ser um arquivo .pkt ou .pka. Um PTMO aparecerá em linha com uma pergunta no seu questionário, no exame do módulo ou em algum outro tipo de avaliação. Você inicia o arquivo .pkt ou .pka diretamente de dentro da avaliação. Normalmente, você configura a rede ou investiga a topologia e responde a uma ou mais perguntas de avaliação de múltipla escolha.
+Existem dois tipos de itens de avaliação no Packet Tracer: 
 
-Já os PTSAs, são avaliações de habilidades somativas em que você demonstra sua habilidade ao implementar as tecnologias que aprendeu. Os PTSAs são avaliações independentes, têm seu próprio mecanismo de classificação e os resultados são registrados em um livro de notas do curso, se houver. Depois de concluir um PTSA, você recebe feedback no nível do item para cada componente classificado.
+* Packet Tracer Media Objetos (PTMO) e as avaliações de habilidades do Packet Tracer (PTSA). PTMOs podem ser um arquivo .pkt ou .pka. Um PTMO aparecerá em linha com uma pergunta no seu questionário, no exame do módulo ou em algum outro tipo de avaliação. Você inicia o arquivo .pkt ou .pka diretamente de dentro da avaliação. Normalmente, você configura a rede ou investiga a topologia e responde a uma ou mais perguntas de avaliação de múltipla escolha.
+
+* PTSAs: são avaliações de habilidades somativas em que você demonstra sua habilidade ao implementar as tecnologias que aprendeu. Os PTSAs são avaliações independentes, têm seu próprio mecanismo de classificação e os resultados são registrados em um livro de notas do curso, se houver. Depois de concluir um PTSA, você recebe feedback no nível do item para cada componente classificado.
 
 
 
