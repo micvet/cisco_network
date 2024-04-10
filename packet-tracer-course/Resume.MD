@@ -76,3 +76,37 @@ Você pode encontrar PTSAs no meio do caminho ou no final do curso. PTSAs são a
 Clique em Reproduzir no vídeo para saber mais sobre os arquivos de PTMO e PTSA Packet Tracer.
 
 
+RESUMO
+MODULO 1
+
+Neste módulo, você aprendeu sobre como usar o Cisco Packet Tracer para explorar a rede sem ter que comprar equipamentos ou, potencialmente, interromper uma rede atual. 
+O Packet Tracer (PT) simula redes domésticas simples, redes de escritório, redes de IoT e até mesmo redes empresariais complexas. 
+O Packet Tracer pode ser usado para visualizar uma rede como uma topologia lógica e como uma representação da rede física.
+
+Este módulo contém vários vídeos que você pode acessar para melhorar suas habilidades no PT e seus conhecimentos de rede. Você explorou recursos adicionais do PT, inclusive a configuração de dispositivos 
+usando a guia Config, específica do PT, além de aprender os comandos CLI equivalentes para configurar dispositivos. Para alguns dispositivos finais, a guia Área de trabalho oferece acesso à configuração de IP, 
+configuração sem fio, prompt de comando, navegador Web e outras aplicações. Os servidores têm uma guia de Serviços que permite que um servidor seja configurado com processos de servidor comuns, como HTTP, DHCP, 
+DNS etc.
+
+Você baixou e instalou o Cisco Packet Tracer para poder concluir a atividade tutorada do Packet Tracer - Exploração dos modos físico e lógico, que contém um sistema de dicas e um tutorial integrado. 
+Outros PTTAs contém sistemas de sugestões, mas não tem tutorial.
+
+MODULO 2
+
+Neste módulo, você aprendeu que há mais de um tipo de arquivo do Packet Tracer. Esses tipos de arquivo são usados para diferentes fins e incluem: .pka, .pkt, .pksz e.pkz.
+
+O tipo de arquivo .pka é um arquivo de atividade do Packet Tracer e é o tipo de arquivo que você experimentará com mais frequência. O arquivo .pka tem uma janela de instruções. 
+Normalmente, a atividade também é pontuada. Esse tipo de arquivo contém duas redes: uma rede inicial e uma rede com as respostas. 
+O tipo de arquivo .pkt é criado quando uma rede simulada é criada no Packet Tracer e salva. O arquivo .pkt não tem janela de instruções ou pontuação de atividade.
+
+Você já sabe o que é um arquivo .pksz porque o usou para o PTTA - Exploração dos modos físico e lógico no Módulo 1. 
+Esses arquivos incluem um arquivo .pka, recursos de mídia e um arquivo de script para o sistema de dicas. 
+Essas atividades oferecem suporte, na forma de dicas contextualizadas, para os alunos que estão trabalhando para concluir a atividade. O arquivo .pkz não é mais usado. 
+Você também aprendeu sobre o Packet Tracer Media Object (PTMO) e a Packet Tracer Skills Assessment (PTSA), ambos são usados para fins de avaliação.
+
+Este módulo também incluiu vídeos de instruções para ajudá-lo a concluir a atividade do Packet Tracer - Criar uma rede simples. Nesse .pka 
+você usou o modo lógico para construir uma rede, configurar dispositivos finais e verificar a conectividade. E, finalmente, outro vídeo demonstrou alguns dos recursos avançados do 
+Cisco Packet Tracer. Recomendamos que você abra o Cisco Packet Tracer e continue explorando!
+
+
+
