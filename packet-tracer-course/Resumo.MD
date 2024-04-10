@@ -10,12 +10,11 @@ Packet Tracer é uma ferramenta que permite simular redes reais. Ele fornece tr�
 
 O menu de gerenciamento de rede permite:
 
-![image](https://github.com/micvet/cisco_network/assets/86981990/55416453-e3db-4235-b30e-45b8948f491e)
-
-
 * Abrir uma rede atual / de exemplo
 * Salve sua rede atual
 * Modifique seu perfil de usuário ou suas preferências
+
+![image](https://github.com/micvet/cisco_network/assets/86981990/55416453-e3db-4235-b30e-45b8948f491e)
 
 ## Configuração de GUI e CLI no Cisco Packet Tracer
 O Packet Tracer também oferece uma variedade de guias para configuração de dispositivos, incluindo o seguinte:
