@@ -68,3 +68,11 @@ O tipo de arquivo .pkt é criado quando uma rede simulada é criada no Packet Tr
 O tipo de arquivo .pksz é específico para atividades supervisionadas pelo Packet Tracer (PTTA). Esses arquivos incluem um arquivo .pka, recursos de mídia e um arquivo de script para o sistema de dicas. Essas atividades oferecem suporte, na forma de dicas contextualizadas, para os alunos que estão trabalhando para concluir a atividade.
 
 Você verá Salvar como PKZ... no menu Arquivo. Esse tipo de arquivo foi usado anteriormente para incorporar imagens e outros arquivos em um arquivo do Packet Tracer. No entanto, as imagens agora são incorporadas diretamente em um arquivo regular.pkt ou.pka por padrão. Portanto, considere .pkz como um tipo de arquivo obsoleto.
+
+Existem dois tipos de itens de avaliação que tiram proveito do Packet Tracer. Isso inclui o Packet Tracer Media Objetos (PTMO) e as avaliações de habilidades do Packet Tracer (PTSA). PTMOs podem ser um arquivo .pkt ou .pka. Um PTMO aparecerá em linha com uma pergunta no seu questionário, no exame do módulo ou em algum outro tipo de avaliação. Você inicia o arquivo .pkt ou .pka diretamente de dentro da avaliação. Normalmente, você configura a rede ou investiga a topologia e responde a uma ou mais perguntas de avaliação de múltipla escolha.
+
+Você pode encontrar PTSAs no meio do caminho ou no final do curso. PTSAs são avaliações de habilidades somativas em que você demonstra sua habilidade ao implementar as tecnologias que aprendeu. Os PTSAs são avaliações independentes, têm seu próprio mecanismo de classificação e os resultados são registrados em um livro de notas do curso, se houver. Depois de concluir um PTSA, você recebe feedback no nível do item para cada componente classificado.
+
+Clique em Reproduzir no vídeo para saber mais sobre os arquivos de PTMO e PTSA Packet Tracer.
+
+
