@@ -1,4 +1,8 @@
-1. O que é a internet
+# **Curso Conceitos Básicos de Redes - Cisco Network Academy** <br>
+
+# Módulo 1
+
+## O que é a internet
 
 A Internet é uma rede global composta por várias redes interconectadas que compartilham informações usando padrões comuns. Essa interconexão ocorre por meio de fios de telefone, cabos de fibra óptica, transmissões sem fio e links de satélite. Tudo o que é acessado online está localizado em algum lugar dessa rede global. Isso inclui sites de mídias sociais, jogos multiplayer, centros de mensagens de e-mail e cursos online. Esses destinos da Internet estão ligados a redes locais que se comunicam através da Internet.
 
