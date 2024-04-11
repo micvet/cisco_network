@@ -13,8 +13,8 @@ Compreender os princípios das redes de computadores é fundamental em um mundo 
 Este diretório contém:
 
 * Resumos de aulas:
-  * [Resumo curso Cisco Packet Tracer)[https://github.com/micvet/cisco_network/blob/main/packet-tracer-course/Resumo.MD]
-  * (Resumo curso Network Essencials)[https://github.com/micvet/cisco_network/tree/main/networking-concepts-course]
+  * [Resumo curso Cisco Packet Tracer](https://github.com/micvet/cisco_network/blob/main/packet-tracer-course/Resumo.MD)
+  * [Resumo curso Network Essencials](https://github.com/micvet/cisco_network/tree/main/networking-concepts-course)
     
 * Exercícios e projetos;
   * Em construção!
