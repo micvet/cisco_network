@@ -41,7 +41,9 @@ Um computador com software de servidor pode atender a vários clientes simultane
 
 O caminho de uma mensagem pode ser simples, como um único cabo entre dois computadores, ou complexo, atravessando redes globais. A infraestrutura de rede é a plataforma que suporta as comunicações, fornecendo canais estáveis e confiáveis, e inclui três categorias de componentes: dispositivos finais, dispositivos intermediários e meios físicos de rede.
 
-* Dispositivos finais são os extremos da comunicação, como computadores, impressoras e telefones IP.
+* Dispositivos finais são os extremos da comunicação. São os dispositivos de rede mais familiares para as pessoas, e servem como a interface entre os usuários e a rede de comunicação. Alguns exemplos incluem computadores (estações de trabalho, laptops, servidores de arquivo, servidores Web), impressoras de rede, telefones, equipamentos de teleconferência, câmeras de segurança e dispositivos móveis (como smartphones, tablets, PDAs, leitores de cartão de débito/crédito sem fio e scanners de código de barras).
+
+Um dispositivo final também é conhecido como host, e é a origem ou destino de uma mensagem transmitida pela rede. Para identificar hosts de forma exclusiva, são utilizados endereços. Quando um host inicia a comunicação, ele usa o endereço do host de destino para especificar onde a mensagem deve ser enviada.
 
 ![image](https://github.com/micvet/cisco_network/assets/86981990/4ce0e197-2e2f-425a-9cb7-ad2c18ffa594)
 
@@ -52,3 +54,16 @@ O caminho de uma mensagem pode ser simples, como um único cabo entre dois compu
 * Os meios físicos de rede são os meios pelos quais os dados são transmitidos, como redes sem fio, redes LAN com fio e redes WAN.
 
 ![image](https://github.com/micvet/cisco_network/assets/86981990/27e4913e-ca1c-4b4a-be19-b774b72104c3)
+
+Dispositivos e meios físicos constituem os elementos físicos, ou hardware, de uma rede. Isso inclui componentes visíveis como laptops, PCs, switches, roteadores, access points sem fio e os cabos usados para conectar esses dispositivos. Em certos casos, alguns componentes podem não ser tão visíveis, como em meios físicos sem fio, onde as mensagens são transmitidas por meio de frequências de rádio invisíveis ou ondas infravermelhas.
+
+## ISP's
+
+Um provedor de serviços de Internet (ISP) atua como o elo entre a rede doméstica e a Internet. Pode ser uma empresa de TV a cabo local, um provedor de telefonia fixa, uma rede celular ou um provedor independente que aluga largura de banda de outra empresa. Além de fornecer conectividade, muitos ISPs oferecem serviços adicionais como contas de e-mail, armazenamento de rede, hospedagem de sites e serviços de segurança ou backup automático.
+
+Os ISPs desempenham um papel fundamental na comunicação global da Internet, conectando usuários em todo o mundo através de uma rede de links interconectados. Esses links formam uma estrutura hierárquica que garante que o tráfego da Internet siga o caminho mais curto da origem ao destino.
+
+![image](https://github.com/micvet/quality-assurance/assets/86981990/9486c59f-2f0b-48cc-8830-0b5b69936142)
+
+### Backbone
+É a espinha dorsal de uma rede. É a infraestrutura por trás da "estrada de informações" que fornece links de dados de alta velocidade para conectar redes de provedores de serviços globalmente. O principal meio físico usado para conectar o backbone da Internet é o cabo de fibra óptica, frequentemente instalado no subsolo para conectar cidades dentro de continentes e também passando sob o mar para conectar continentes, países e cidades.
