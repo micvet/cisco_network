@@ -61,9 +61,39 @@ Dispositivos e meios físicos constituem os elementos físicos, ou hardware, de 
 
 Um provedor de serviços de Internet (ISP) atua como o elo entre a rede doméstica e a Internet. Pode ser uma empresa de TV a cabo local, um provedor de telefonia fixa, uma rede celular ou um provedor independente que aluga largura de banda de outra empresa. Além de fornecer conectividade, muitos ISPs oferecem serviços adicionais como contas de e-mail, armazenamento de rede, hospedagem de sites e serviços de segurança ou backup automático.
 
+### Backbone
+É a espinha dorsal de uma rede. É a infraestrutura por trás da "estrada de informações" que fornece links de dados de alta velocidade para conectar redes de provedores de serviços globalmente. O principal meio físico usado para conectar o backbone da Internet é o cabo de fibra óptica, frequentemente instalado no subsolo para conectar cidades dentro de continentes e também passando sob o mar para conectar continentes, países e cidades.
+
 Os ISPs desempenham um papel fundamental na comunicação global da Internet, conectando usuários em todo o mundo através de uma rede de links interconectados. Esses links formam uma estrutura hierárquica que garante que o tráfego da Internet siga o caminho mais curto da origem ao destino.
 
 ![image](https://github.com/micvet/quality-assurance/assets/86981990/9486c59f-2f0b-48cc-8830-0b5b69936142)
 
-### Backbone
-É a espinha dorsal de uma rede. É a infraestrutura por trás da "estrada de informações" que fornece links de dados de alta velocidade para conectar redes de provedores de serviços globalmente. O principal meio físico usado para conectar o backbone da Internet é o cabo de fibra óptica, frequentemente instalado no subsolo para conectar cidades dentro de continentes e também passando sob o mar para conectar continentes, países e cidades.
+A conexão dos ISPs é essencial para a Internet. É uma rede complexa de cabos de fibra ótica, switches e roteadores que direcionam o tráfego entre os hosts. Para os usuários domésticos, conectar-se ao ISP parece simples, mas há uma infraestrutura complexa por trás disso.
+
+Na opção mais simples, um modem conecta diretamente um computador ao ISP, porém é uma conexão não segura. A opção mais comum é usar um roteador, que oferece segurança, conectando o computador ao ISP. O roteador inclui um switch para conectar hosts com fio e um ponto de acesso sem fio para hosts sem fio, além de fornecer informações de endereço IP e segurança para os hosts internos.
+
+![image](https://github.com/micvet/cisco_network/assets/86981990/bf487ccf-5622-404e-adab-078a06ec642f)
+
+### Conexões de cabo e DSL
+
+A maioria dos usuários de rede doméstica não se conecta aos ISP's com cabos de fibra óptica. As opções comuns de conexão incluem cabo e DSL:
+
+Cabo: Normalmente oferecido por provedores de serviços de televisão a cabo, o sinal de internet é transmitido através do mesmo cabo coaxial usado para televisão a cabo. Proporciona uma conexão de alta largura de banda sempre ativa. Um cable modem especial separa o sinal de dados da Internet dos outros sinais do cabo, fornecendo uma conexão Ethernet para um computador ou LAN.
+
+DSL: A Linha Digital de Assinante oferece uma conexão sempre ativa e de alta largura de banda. Requer um modem DSL especial que separa o sinal DSL do sinal telefônico, fornecendo uma conexão Ethernet. A DSL utiliza a linha telefônica, dividida em três canais: um para chamadas telefônicas, um canal de download rápido e um canal de upload um pouco mais lento. A qualidade e velocidade da conexão DSL dependem da qualidade da linha e da distância até a central telefônica.
+
+Outras opções de conexão ISP para usuários domésticos incluem:
+
+Celular: Acesso à Internet por celular usa uma rede de telefonia celular. O desempenho depende dos recursos do telefone e da torre celular. É útil em áreas sem acesso à Internet, mas pode resultar em taxas extras se exceder o plano de dados.
+
+Serviço de Satélite: Ideal para áreas sem DSL ou cabo. Requer uma linha de visão clara para o satélite. As velocidades variam, mas geralmente são boas. Os custos iniciais podem ser altos, mas a mensalidade é moderada.
+
+Conexão Discada: Usa uma linha telefônica e um modem. Oferece baixa largura de banda e é útil apenas quando outras opções não estão disponíveis, como durante viagens.
+
+![image](https://github.com/micvet/cisco_network/assets/86981990/f4d3fc07-c464-456c-848f-d75e2309e733)
+
+Em áreas metropolitanas, muitos apartamentos e pequenos escritórios têm acesso direto a cabos de fibra óptica. Isso possibilita que provedores de serviços de Internet ofereçam velocidades de largura de banda mais altas e suporte a serviços adicionais, como Internet, telefone e TV.
+
+A escolha da conexão depende da localização geográfica e da disponibilidade do provedor de serviços.
+
+![image](https://github.com/micvet/cisco_network/assets/86981990/f56ab013-32d2-4f01-945b-ad4f66f2d052)
