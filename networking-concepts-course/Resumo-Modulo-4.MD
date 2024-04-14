@@ -105,6 +105,56 @@ enviados pela WLAN, permitindo que dispositivos sem fio saibam a qual rede perte
 O "broadcast de SSID" determina se o SSID será transmitido para todos os dispositivos dentro do alcance da rede. Desativá-lo pode dificultar a detecção da rede, 
 mas não é suficiente para evitar acessos não autorizados. É essencial utilizar criptografia forte para restringir o acesso não autorizado à rede sem fio.
 
+## Configuração inicial
+
+A configuração inicial de um roteador sem fio geralmente envolve conectar um computador à porta com fio do roteador e ajustar as configurações básicas usando um utilitário de configuração automática. Se não houver um dispositivo com conexão com fio disponível, pode ser necessário configurar primeiro o software de cliente sem fio em um notebook ou tablet.
+
+Para conectar o computador ao roteador com fio, um cabo Ethernet é usado, conectando uma extremidade à porta de rede do computador e a outra a uma porta LAN no roteador, evitando a porta "Internet". Em seguida, é importante confirmar a conexão ativa observando as luzes de link na placa de interface de rede (NIC). Se o computador não receber automaticamente um endereço IP do servidor DHCP do roteador, é necessário configurá-lo manualmente com um endereço IP, máscara de sub-rede, gateway padrão e informações de DNS conforme especificado na documentação do roteador.
+
+### Considerações
+
+* Nome da rede: Ativar a transmissão do SSID faz com que o nome da rede seja visível para todos os clientes sem fio dentro do alcance do sinal. No entanto, revelar informações detalhadas demais, como o modelo ou a marca do dispositivo, pode expor a rede a possíveis vulnerabilidades de segurança. Isso ocorre porque os dispositivos sem fio possuem configurações padrão que são amplamente conhecidas e podem ser exploradas por invasores em potencial. Portanto, é recomendável evitar incluir informações excessivas no SSID para proteger a segurança da rede.
+
+* Conexões
+
+Os dispositivos sem fio operam em faixas de frequência específicas, mas a compatibilidade entre dispositivos e roteadores depende dos padrões de rede suportados. Dispositivos mais antigos, por exemplo, podem não se conectar a roteadores configurados apenas para padrões mais recentes, como 802.11n ou 802.11ac. Para garantir a compatibilidade, é necessário configurar o roteador no modo legado, que pode incluir suporte para padrões como 802.11a, 802.11b, 802.11g, 802.11n e 802.11ac. Isso permite que dispositivos mais antigos se conectem à rede sem fio, garantindo uma cobertura ampla de dispositivos compatíveis.
+
+As redes sem fio padrões 802.11 são um conjunto de especificações desenvolvidas pelo IEEE (Institute of Electrical and Electronics Engineers) para comunicação sem fio. Aqui está uma visão geral de cada padrão:
+
+**-802.11a:**
+Lançamento: 1999
+Velocidade máxima teórica: Até 54 Mbps
+Faixa de frequência: 5 GHz
+Principais características: O padrão 802.11a foi um dos primeiros padrões Wi-Fi e operava na faixa de frequência de 5 GHz. Ele oferecia maior largura de banda e menos interferência em comparação com o padrão 802.11b, mas tinha um alcance mais curto devido às propriedades de propagação de rádio na faixa de 5 GHz.
+
+**-802.11b:**
+Lançamento: 1999
+Velocidade máxima teórica: Até 11 Mbps
+Faixa de frequência: 2,4 GHz
+Principais características: O padrão 802.11b foi amplamente adotado devido à sua compatibilidade com equipamentos mais antigos e seu custo mais baixo em comparação com o 802.11a. Operava na faixa de frequência de 2,4 GHz e oferecia uma velocidade máxima teórica de até 11 Mbps.
+
+**-802.11g:**
+Lançamento: 2003
+Velocidade máxima teórica: Até 54 Mbps
+Faixa de frequência: 2,4 GHz
+Principais características: O padrão 802.11g foi uma evolução do 802.11b, oferecendo uma velocidade máxima teórica mais rápida de até 54 Mbps enquanto mantinha compatibilidade com dispositivos 802.11b. Operava na mesma faixa de frequência de 2,4 GHz que o 802.11b.
+
+**-802.11n:**
+Lançamento: 2009
+Velocidade máxima teórica: Até 600 Mbps
+Faixa de frequência: 2,4 GHz e 5 GHz
+Principais características: O padrão 802.11n introduziu MIMO (Multiple Input Multiple Output) e canais de 40 MHz para aumentar a largura de banda e melhorar o desempenho em comparação com os padrões anteriores. Ele operava nas faixas de frequência de 2,4 GHz e 5 GHz e oferecia velocidades de até 600 Mbps.
+
+**-802.11ac:**
+Lançamento: 2013
+Velocidade máxima teórica: Até 1,3 Gbps (Wave 1), Até 7 Gbps (Wave 2)
+Faixa de frequência: 5 GHz
+Principais características: O padrão 802.11ac, também conhecido como Wi-Fi 5, introduziu uma série de melhorias em relação ao 802.11n, incluindo suporte a canais de 80 MHz e 160 MHz, bem como modulação mais avançada. Ele opera exclusivamente na faixa de frequência de 5 GHz e oferece velocidades de até 1,3 Gbps (Wave 1) e até 7 Gbps (Wave 2).
+
+
+O modo de uso da rede determina quem pode acessá-la, com opções como acesso para convidados em alguns roteadores sem fio. Essa área de cobertura do SSID permite acesso aberto restrito apenas à Internet. Em alguns roteadores, o modo legado pode ser rotulado como modo misto.
+
+
 
 
 
