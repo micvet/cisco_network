@@ -46,12 +46,12 @@ TCP: O protocolo TCP (Transmission Control Protocol) é utilizado para estabelec
 O dispositivo inicia o processo de comunicação enviando uma solicitação de conexão para a rede local.
 O protocolo **DHCP** (ou **ICMPv6**, se estiver usando **IPv6**) é utilizado para atribuir um endereço IP ao dispositivo, permitindo que ele se comunique na rede.
 
-*Encapsulamento e Transmissão dos Dados:
+* Encapsulamento e Transmissão dos Dados:
 
 O dispositivo encapsula os dados a serem transmitidos em pacotes **Ethernet** (se estiver conectado por cabo) ou **WLAN** (se estiver usando uma conexão sem fio).
 Os pacotes são então transmitidos pela rede local até alcançarem o roteador.
 
-*Resolução de Nomes de Domínio:
+* Resolução de Nomes de Domínio:
 
 Antes de enviar uma solicitação para um servidor web, o dispositivo precisa determinar o endereço IP do servidor com base no nome de domínio fornecido.
 Ele envia uma consulta **DNS** para um servidor **DNS**, solicitando o endereço IP associado ao nome de domínio.
