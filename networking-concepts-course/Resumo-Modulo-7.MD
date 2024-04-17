@@ -5,9 +5,6 @@
 A Ethernet é uma tecnologia de rede com fio usada em LANs, operando nas camadas de enlace de dados e física. Ela suporta larguras de banda de 10 Mbps a 100 Gbps e utiliza diferentes tipos de cabos, como par 
 trançado, fibra óptica e cabos coaxiais. Os padrões da Ethernet são definidos pelos padrões IEEE 802.2 e 802.3.
 
-![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/fad82183-5957-4253-abac-ad374e9e9430)
-
-
 As subcamadas de link de dados, LLC e MAC, desempenham papéis distintos na camada de enlace de dados:
 
 Subcamada LLC: Responsável pela comunicação entre o software de rede e o hardware do dispositivo. Ela identifica o protocolo da camada de rede usado no quadro, permitindo que diferentes protocolos da camada 3 
@@ -65,5 +62,14 @@ foram transmitidos corretamente, detectando quaisquer erros de transmissão.
 
 Inter-Frame Gap (IFG): É um período de tempo entre os quadros Ethernet consecutivos. Ele permite que os dispositivos de rede se preparem para receber o próximo quadro.
 
+## Encapsulamento
+
+Assim como uma carta é colocada dentro de um envelope para ser entregue, as mensagens de computador são encapsuladas em um formato específico, chamado de quadro, antes de serem enviadas pela rede. O processo de encapsulamento garante que a mensagem seja entregue corretamente, fornecendo informações como o endereço de destino e o endereço do host de origem. Se a mensagem não estiver formatada corretamente, ela não será entregue nem processada pelo host de destino.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/284da94b-e9e0-46eb-8c14-8a566e2833ef)
+
+**Analogia com o processo de encapsulamento:**<br>
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/671fa05e-0818-41be-9ac4-e2a1f8073eb7)
 
 
