@@ -13,8 +13,6 @@ compartilhem a mesma interface de rede e mídia.
 Subcamada MAC: Implementada em hardware, é responsável pelo encapsulamento de dados e controle de acesso à mídia. Fornece endereçamento de camada de enlace de dados e é integrada a diversas tecnologias de camada 
 física, como Ethernet (IEEE 802.3) e Wi-Fi (IEEE 802.11).
 
-![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/397706d0-1a73-4928-ad92-fff40d512258)
-
 ## Subcamada MAC
 
 A subcamada MAC, na IEEE 802.3, desempenha duas funções principais:
