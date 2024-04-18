@@ -55,14 +55,39 @@ Antes de encaminhar um pacote, o ISP deve traduzir o endereço IPv4 de origem, q
 Translation). O NAT é utilizado para converter entre endereços IPv4 privados e públicos, geralmente realizado no roteador que conecta a rede interna à rede do ISP. 
 Os endereços IPv4 privados na intranet da organização são traduzidos para endereços IPv4 públicos antes de serem encaminhados para a Internet.
 
+## Endereços IPv4 de Uso Especial
 
 
+Existem endereços especiais na rede, como o endereço de loopback (127.0.0.0/8 ou 127.0.0.1 a 127.255.255.254), comumente identificado como 127.0.0.1. Esses endereços são usados por um host para direcionar tráfego para si mesmo. Por exemplo, o comando ping é usado para testar conexões com outros hosts, mas também pode ser usado para testar a configuração de IP do próprio dispositivo.
 
+### Endereços locais de link
 
+Os endereços locais de link (169.254.0.0/16 ou 169.254.0.1 a 169.254.255.254) são conhecidos como endereços APIPA (Auto-Configuração de IP Privado Automático) ou endereços auto-atribuídos. Eles são utilizados por clientes Windows para se autoconfigurarem quando não conseguem obter um endereçamento IP por outros métodos. Esses endereços podem ser utilizados em uma conexão ponto a ponto, mas não são comumente empregados para esse fim.
 
+## Endereçamento Classful Legado
 
+Em 1981, os endereços IPv4 foram atribuídos usando o método de endereçamento classful, conforme definido na RFC 790. Nesse sistema, os clientes recebiam um endereço de rede baseado em uma das três classes: A, B ou C.
 
+Classe A (0.0.0.0/8 a 127.0.0.0/8): Projetada para suportar redes extremamente grandes, com mais de 16 milhões de endereços de host por rede.
+Classe B (128.0.0.0/16 a 191.255.0.0/16): Projetada para redes de tamanho moderado a grande, com até aproximadamente 65.000 endereços de host por rede.
+Classe C (192.0.0.0/24 a 223.255.255.0/24): Projetada para redes pequenas, com no máximo 254 hosts por rede.
+Além disso, havia um bloco multicast Classe D (224.0.0.0 a 239.0.0.0) e um bloco de endereço experimental Classe E (240.0.0.0 a 255.0.0.0).
 
+Naquela época, com um número limitado de computadores conectados à Internet, o endereçamento classful era eficaz. No entanto, as classes A e B tinham um grande número de endereços de host, enquanto a classe C tinha muito poucos. Isso resultou na subutilização da maioria dos endereços IPv4 disponíveis.
+
+Na década de 1990, com a popularização da World Wide Web (WWW), o método de endereçamento clássico foi substituído pelo endereçamento sem classe, que é amplamente utilizado hoje em dia. Este método permite uma distribuição mais eficiente dos endereços IPv4 públicos, baseando-se no número de endereços que podem ser justificados.
+
+## Atribuição de Endereços IP
+
+Os endereços IPv4 públicos são globalmente roteados pela Internet e devem ser exclusivos. A IANA gerencia e aloca blocos de endereços IPv4 e IPv6 aos registros regionais de Internet (RIRs), responsáveis por fornecer endereços IP aos ISPs e organizações. Existem cinco RIRs responsáveis por essa alocação, e as organizações podem obter seus endereços diretamente de um RIR, sujeitas às políticas específicas desse RIR.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/fcf9f882-7d9f-4131-b53c-b323aa76787b)
+
+* AfriNIC(Centro de Informação de Redes Africanas) - Região da África
+* APNIC(Centro de informações de redes da Ásia-Pacífico) - Região Ásia/Pacífico
+* ARIN(Registro Americano de Números da Internet) - Região da América do Norte
+* LACNIC(Registro regional de endereços IP da América Latina e do Caribe) - América Latina e algumas ilhas do Caribe
+* RIPE NCC(Centro de coordenação da rede Réseaux IP Européens) - Europa, Oriente Médio e Ásia Central
 
 
 
