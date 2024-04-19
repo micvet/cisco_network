@@ -89,7 +89,9 @@ Os endereços IPv4 públicos são globalmente roteados pela Internet e devem ser
 * LACNIC(Registro regional de endereços IP da América Latina e do Caribe) - América Latina e algumas ilhas do Caribe
 * RIPE NCC(Centro de coordenação da rede Réseaux IP Européens) - Europa, Oriente Médio e Ásia Central
 
+## Segmentação de Rede
 
+### Domínios de Broadcast e Segmentação
 
 
 
