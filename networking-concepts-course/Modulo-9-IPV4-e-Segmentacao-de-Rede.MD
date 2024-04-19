@@ -119,7 +119,7 @@ Para resolver o problema do grande domínio de broadcast, é necessário dividir
 
 A divisão em sub-redes não apenas reduz o tráfego total da rede e melhora o desempenho, mas também permite que o administrador implemente políticas de segurança, determinando quais sub-redes podem ou não se comunicar entre si. Além disso, ela reduz o número de dispositivos afetados por problemas de tráfego anormal ou intenções maliciosas. Existem diversas maneiras de usar sub-redes para gerenciar dispositivos de rede.
 
-**Maneiras de segmentar a rede:
+** Maneiras de segmentar a rede:
 
 * Localização:
 ![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/c4a2b80a-3c32-4d7d-86df-26f750352472)
