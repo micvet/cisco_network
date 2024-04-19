@@ -93,6 +93,45 @@ Os endereços IPv4 públicos são globalmente roteados pela Internet e devem ser
 
 ### Domínios de Broadcast e Segmentação
 
+Em uma rede, transmissões são e-mails ou mensagens enviadas a todos os membros, mas nem sempre são relevantes para todos. Na LAN Ethernet, dispositivos usam broadcasts e o ARP para encontrar outros dispositivos. O ARP envia broadcasts para descobrir endereços MAC associados aos IPs. Dispositivos também usam serviços para se localizar. Switches encaminham broadcasts para todas as interfaces, exceto a de origem.
+
+Os roteadores não propagam broadcasts. Quando um roteador recebe um broadcast em uma interface, ele não o encaminha para outras interfaces. Assim, cada interface do roteador conecta-se a um domínio de broadcast específico, e as transmissões são limitadas a esse domínio.
+
+**Exemplificando de maneira mais fácil:**
+
+Imagine que você tem uma rede de computadores, como uma escola. Cada computador na escola precisa se comunicar com os outros para compartilhar informações, como um trabalho de grupo.
+
+Agora, para que os computadores se comuniquem, eles usam algo chamado de "broadcast". É como gritar em uma sala cheia de pessoas para que todos possam ouvir.
+
+Mas agora, vamos pensar em um roteador. Um roteador é como um carteiro que entrega mensagens entre diferentes casas (ou redes de computadores).
+
+Aqui está o ponto chave: os roteadores não gostam de gritar para todos como os computadores fazem. Eles são mais como mensageiros discretos. Quando um roteador recebe uma mensagem de "grito" (um broadcast) de um computador em uma de suas interfaces, ele pensa: "Isso é apenas para os computadores nesta sala", então ele não o entrega para todas as outras salas (ou interfaces).
+
+Então, para simplificar, cada interface do roteador está conectada a uma sala separada (ou domínio de broadcast), e ele só entrega mensagens dentro dessa sala. Isso mantém as coisas organizadas e evita que a rede fique muito barulhenta!
+
+Um grande domínio de broadcast ocorre quando muitos hosts estão conectados à mesma rede. Isso pode levar a problemas de desempenho, pois os hosts podem gerar uma quantidade excessiva de tráfego de broadcast. Por exemplo, na LAN 1 da figura, com 400 usuários, o grande número de broadcasts pode causar lentidão na rede e nos dispositivos, pois cada pacote de broadcast deve ser aceito e processado individualmente.
+
+
+Para resolver o problema do grande domínio de broadcast, é necessário dividir a rede em sub-redes menores. Isso é feito através de um processo chamado divisão em sub-redes. Com isso, os broadcasts são propagados apenas dentro das sub-redes individuais, garantindo que um broadcast na LAN 1 não afete a LAN 2.
+
+### Razões para Segmentar Redes
+
+
+A divisão em sub-redes não apenas reduz o tráfego total da rede e melhora o desempenho, mas também permite que o administrador implemente políticas de segurança, determinando quais sub-redes podem ou não se comunicar entre si. Além disso, ela reduz o número de dispositivos afetados por problemas de tráfego anormal ou intenções maliciosas. Existem diversas maneiras de usar sub-redes para gerenciar dispositivos de rede.
+
+**Maneiras de segmentar a rede:
+
+* Localização:
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/c4a2b80a-3c32-4d7d-86df-26f750352472)
+* Grupo ou função:
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/9f734dc7-02ef-42e8-bb14-211622475582)
+* Tipos de dispositivos:
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/2f41a779-2847-4c25-ba7f-fde3db25c18c)
+
+
+Os administradores de rede têm flexibilidade para criar sub-redes usando qualquer divisão que faça sentido para a rede. Nas figuras, as sub-redes são identificadas por comprimentos de prefixo. É crucial que todos os administradores de redes compreendam esse processo de divisão em sub-redes. Existem diversos métodos para auxiliar nesse entendimento, e embora possa parecer complicado inicialmente, com atenção aos detalhes e prática, a criação de sub-redes se tornará mais fácil.
+
+
 
 
 
