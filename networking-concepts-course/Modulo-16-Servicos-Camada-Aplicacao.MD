@@ -62,17 +62,17 @@ O "nslookup" permite aos usuários consultar servidores DNS para obter informaç
 
 O uso básico do comando "nslookup" envolve fornecer o nome de domínio que se deseja consultar como argumento, seguido de uma opção que especifica o tipo de registro DNS que se deseja obter. Por exemplo:
 
-'''' 
+'''
 nslookup example.com
-''''
+'''
 
 Este comando retornará o endereço IP associado ao nome de domínio "example.com".
 
 Além disso, o "nslookup" também pode ser usado interativamente, o que permite ao usuário executar várias consultas DNS sem sair do prompt de comando. Para entrar no modo interativo, basta digitar "nslookup" sem argumentos e pressionar Enter. A partir daí, o usuário pode inserir comandos de consulta, como:
 
-''''
+'''
 server 8.8.8.8
-''''
+'''
 
 Este comando instrui o "nslookup" a usar o servidor DNS com o endereço IP "8.8.8.8" para consultas subsequentes.
 
@@ -87,7 +87,99 @@ O protocolo HTTP não oferece segurança, tornando as informações vulneráveis
 Embora existam muitos servidores web e clientes web diferentes disponíveis, os padrões de HTML e do protocolo HTTP permitem que esses servidores e clientes de diversos fabricantes interajam sem dificuldades. Isso facilita a compatibilidade e a interoperabilidade entre diferentes sistemas na Internet.
 
 
-## 
+## Clientes e servidores FTP
+
+
+Além dos serviços da Web, outro serviço comum na Internet é o de transferência de arquivos.
+
+O File Transfer Protocol (FTP) oferece uma maneira simples de transferir arquivos entre computadores. Um cliente FTP pode acessar um servidor FTP para realizar funções de gerenciamento de arquivos, como fazer uploads e downloads.
+
+O servidor FTP permite que os clientes troquem arquivos entre dispositivos e realizem operações de gerenciamento de arquivos, como exclusão ou renomeação, enviando comandos específicos. Para isso, o serviço FTP utiliza duas portas diferentes para a comunicação entre cliente e servidor.
+
+No exemplo mostrado na figura, para iniciar uma sessão de FTP, as solicitações de conexão de controle são enviadas para o servidor pela porta TCP 21. Uma vez estabelecida a sessão, o servidor utiliza a porta TCP 20 para transferir os dados dos arquivos.
+
+O software de cliente FTP está integrado em sistemas operacionais de computador e na maioria dos navegadores Web. Além disso, existem clientes FTP independentes que oferecem uma interface fácil de usar, com muitas opções, baseada em GUI (Interface Gráfica do Usuário).
+Com base nos comandos enviados pela conexão de controle, os dados podem ser baixados do servidor ou carregados do cliente.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/e8200c58-0ffe-46b8-a5f8-1e683d0c5687)
+
+## Terminais Virtuais
+
+### Telnet
+
+
+Antes dos computadores desktop com interfaces gráficas, sistemas baseados em texto eram comuns, muitas vezes consistindo apenas de terminais de exibição conectados fisicamente a um computador central. Com a disponibilidade de redes, surgiu a necessidade de acessar remotamente esses sistemas de computador da mesma forma que os terminais conectados diretamente.
+
+O Telnet foi desenvolvido para atender a essa necessidade no início da década de 70 e é um dos protocolos e serviços mais antigos da camada de Aplicação da suite TCP/IP. Ele oferece um método padrão para emular dispositivos terminais baseados em texto na rede de dados. Tanto o protocolo quanto o software cliente que o implementa são comumente chamados de Telnet. Os servidores Telnet aguardam solicitações de clientes na porta TCP 23.
+
+Uma conexão Telnet, apropriadamente chamada de sessão ou conexão de terminal virtual (vty), cria um dispositivo virtual que oferece os mesmos recursos de uma sessão de terminal, incluindo acesso à interface de linha de comando (CLI) do servidor, sem a necessidade de um dispositivo físico para conexão direta.
+
+Na figura, o cliente está conectado remotamente ao servidor via Telnet, permitindo que execute comandos como se estivesse conectado localmente ao servidor.
+
+É importante observar que o Telnet não é considerado seguro devido à falta de criptografia, sendo recomendado o uso do SSH na maioria dos ambientes. No entanto, o Telnet é frequentemente utilizado em exemplos por sua simplicidade de configuração.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/bcf2b14f-7ba0-4478-94f1-2ea0ce868cc4)
+
+### Problemas de segurança com Telnet
+
+Quando uma conexão Telnet é estabelecida, os usuários podem executar qualquer função autorizada no servidor, semelhante a uma sessão de linha de comando no próprio servidor. Eles podem iniciar e parar processos, configurar dispositivos e até mesmo desligar o sistema.
+
+No entanto, o Telnet não suporta o transporte de dados criptografados. Todos os dados trocados durante as sessões Telnet são transportados como texto simples pela rede, o que significa que podem ser facilmente interceptados e compreendidos.
+
+Por outro lado, o protocolo Secure Shell (SSH) oferece uma alternativa segura para acesso ao servidor. Ele fornece uma estrutura para proteger o login remoto e outros serviços de rede, além de autenticação mais forte que o Telnet. O SSH também suporta o transporte de dados de sessão usando criptografia.
+
+Como melhor prática, os profissionais de rede devem sempre usar o SSH em vez do Telnet, sempre que possível, para garantir a segurança da comunicação. Na figura ilustrada, é evidente como os dados capturados pelo hacker durante o uso do Telnet são claramente legíveis, enquanto os dados capturados durante o uso do SSH estão criptografados, tornando a comunicação mais segura.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/df51ddca-13f5-466e-a5ba-c019b61cdd7e)
+
+## E-mail e Mensagens
+
+O e-mail é um dos aplicativos cliente/servidor mais populares na Internet. Servidores de e-mail executam software que permite interagir com clientes e outros servidores de e-mail pela rede.
+
+Cada servidor de e-mail recebe e armazena e-mails de usuários que têm caixas de correio configuradas nele. Os usuários acessam seus e-mails usando clientes de e-mail, muitas vezes através de clientes baseados na Web, como Microsoft 365, Yahoo e Gmail.
+
+As caixas de correio são identificadas no formato usuário@empresa.domínio.
+
+Vários protocolos são utilizados no processamento de e-mails, incluindo SMTP (envio de e-mails), POP3 e IMAP4 (recuperação de e-mails).
+
+Na figura, mostra-se uma transação de e-mail em que um remetente envia um e-mail usando SMTP para um destinatário através do servidor de e-mail do ISP A. O e-mail chega ao servidor de e-mail do ISP B do destinatário, que o destinatário lê usando os protocolos IMAP ou POP.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/9a2c5425-0757-497c-89ac-75a6c81ded78)
+
+### Protocolos de e-mail
+
+* **SMTP**
+O SMTP (Simple Mail Transfer Protocol) é utilizado por clientes de e-mail para enviar mensagens para o servidor de e-mail local. O servidor local determina se a mensagem é destinada a uma caixa de correio local ou a uma caixa de correio em outro servidor.
+
+Se a mensagem precisar ser enviada para um servidor diferente, o SMTP também será utilizado entre esses dois servidores. As solicitações SMTP são enviadas para a porta 25.
+
+No processo de envio de e-mail, o SMTP desempenha um papel fundamental, garantindo a entrega adequada da mensagem ao destino pretendido.
+
+* **POP**
+
+O protocolo POP (POP3) permite que um servidor compatível com clientes POP receba e armazene mensagens destinadas aos seus usuários. Quando o cliente se conecta ao servidor de e-mail, as mensagens são baixadas para o cliente. Por padrão, as mensagens não são mantidas no servidor após serem acessadas pelo cliente. Os clientes se conectam aos servidores POP3 na porta 110.
+
+* **IMAP**
+O protocolo IMAP (IMAP4) também permite que um servidor compatível com clientes IMAP receba e armazene mensagens destinadas aos seus usuários. No entanto, ao contrário do POP, o IMAP mantém as mensagens nas caixas de correio no servidor, a menos que sejam excluídas pelo usuário. O IMAP4, a versão mais recente, ouve solicitações do cliente na porta 143.
+
+## Mensagens de texto
+
+As mensagens de texto são uma das ferramentas de comunicação mais populares em uso atualmente. Além disso, o software de mensagens de texto está integrado a muitos aplicativos online, aplicativos de smartphones e sites de mídia social.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/d5d686ca-e9bb-4550-bb73-fe5f641f04c7)
+
+Ambos os clientes podem enviar e receber mensagens simultaneamente.
+
+As mensagens de texto, também conhecidas como mensagens instantâneas, mensagens diretas, mensagens privadas ou bate-papo, permitem que os usuários se comuniquem pela Internet em tempo real. Elas são frequentemente acessadas por meio de clientes baseados na Web integrados a mídias sociais ou sites de compartilhamento de informações, permitindo a conexão apenas com outros usuários do mesmo site.
+
+Além disso, existem vários clientes de mensagens de texto autônomos, como Cisco Webex Teams, Microsoft Teams, WhatsApp, Facebook Messenger, entre outros, disponíveis para uma ampla variedade de sistemas operacionais e dispositivos, incluindo versões móveis. Esses aplicativos não apenas suportam mensagens de texto, mas também permitem a transferência de documentos, vídeos, músicas e arquivos de áudio.
+
+## Chamadas telefônicas pela Internet
+
+
+Fazer chamadas telefônicas pela Internet está se popularizando com a Telefonia de Internet, que usa tecnologia peer-to-peer similar às mensagens instantâneas. A tecnologia VoIP converte sinais de voz em dados digitais encapsulados em pacotes IP. Os usuários precisam de um software de telefone IP e um nome exclusivo para receber chamadas, utilizando alto-falantes e microfone, podendo conectar um headset ao computador. Chamadas são feitas para outros usuários do serviço selecionando o nome na lista. Chamadas para telefones convencionais exigem um gateway para acessar a PSTN, podendo haver taxas associadas. Portas e protocolos variam conforme o software utilizado.
+
+![image](https://github.com/micvet/bootcamp-qa-automacao-cypress/assets/86981990/dd74645e-8858-4a00-a5ed-206cf04dcfad)
 
 
 
