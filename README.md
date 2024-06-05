@@ -16,10 +16,6 @@ Este diretório contém:
   * [Resumo curso Cisco Packet Tracer](https://github.com/micvet/cisco_network/blob/main/packet-tracer-course/Resumo.MD)
   * [Resumo curso Network Essencials](https://github.com/micvet/cisco_network/tree/main/networking-concepts-course)
     
-* Exercícios e projetos;
-  * Em construção!
- 
-    
 Obrigada!
 
 
