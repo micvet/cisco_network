@@ -1,519 +1,80 @@
-Config Switch 101
+# Laboratório de Redes com Packet Tracer
 
-Switch>enable
-Switch#configure terminal
-Switch(config)#hostname SW-101
-SW-101(config)#enable secret cisco
+## Descrição
+Este laboratório foi criado para demonstrar a configuração de uma rede, usando o Cisco Packet Tracer. O lab inclui a criaçao de VLANs, configuração do roteamento inter-VLAN, trunking, SSH para acesso seguro e configuração de servidor DHCPv4.
 
+## Objetivos
+- Configurar VLANs e trunking em switches.
+- Configurar roteamento inter-VLAN em switches de camada 3.
+- Configurar roteamento inter-VLAN com Router-on-a-Stick.
+- Configurar acesso SSH seguro para os dispositivos.
+- Configurar DHCP em roteador para fornecer endereços IP dinâmicos.
+- Demonstrar o uso de EtherChannel para aumentar a largura de banda e redundância entre switches.
+- Demonstrar o SPT em ação, evitando o loop de pacotes na camada de acesso.
 
-SW-101(config)#line console 0
-SW-101(config-line)#logging synchronous 
-SW-101(config-line)#password cisco
-SW-101(config-line)#login
-SW-101(config-line)#exit
+## Topologia
 
-SW-101(config)#ip domain-name cisco.com
-SW-101(config)#ip ssh version 2
-SW-101(config)#crypto key generate rsa general-keys modulus 768
-SW-101(config)#line vty 0 4
-SW-101(config-line)#password cisco
-SW-101(config-line)#login
-SW-101(config-line)#transport input ssh
-SW-101(config-line)#exit
+<div align='left'>
+   <img src='https://github.com/user-attachments/assets/40e6c1e5-5b00-4820-aed0-975c1e406069' height='250'/>
+<div/><br> 
 
-SW-101(config)#service password-encryption
+## Equipamentos e Configurações
 
+São duas redes se comunicando por meio de dois roteadores: **RT-Campus01** e **RT-Campus02**.
 
-SW-101(config)#banner motd /####################################
-Acesso permitido somente para pessoas autorizadas.
-####################################/
+### Roteadores
+Dois roteadores foram configurados para fornecer roteamento entre as redes VLANs e acesso à internet fictício:
 
-SW-101(config)#vlan 10
-SW-101(config-vlan)#name financeiro
-SW-101(config-vlan)#exit
-SW-101(config)#vlan 20
-SW-101(config-vlan)#name rh
-SW-101(config-vlan)#exit
-SW-101(config)#vlan 99
-SW-101(config-vlan)#name mgmt
-SW-101(config-vlan)#exit
+- **RT-Campus01**: Configura DHCP para várias VLANs, roteamento entre as VLANs e conexão com o roteador RT-Campus02.
+- **RT-Campus02**: Configura gateways padrão para as VLANs 30 e 40, além de roteamento entre as VLANs e conexão com o RT-Campus01.
 
-SW-101(config)#interface vlan 99
-SW-101(config-if)#ip address 192.168.99.101 255.255.255.0
+### Switches sob **RT-Campus01**
+Foram configurados quatro switches: SW-101, SW-102, SW-103 e SWM-101. Cada switch tem configurações específicas para VLANs, EtherChannel, e trunks. As configurações de cada switch podem ser encontradas na pasta `config/`.
 
-SW-101(config)#interface range FastEthernet 0/7 - 8
-SW-101(config-if-range)#channel-group 1 mode active
-SW-101(config-if-range)#exit
-SW-101(config-if-range)#interface port-channel 1
-SW-101(config-if)#switchport mode trunk
-SW-101(config-if)#switchport trunk allowed vlan 1,10,20,99
+- **SW-101**: Configuração das VLANs, trunks, e EtherChannel.
+- **SW-102**: Configuração de VLANs, trunks, e EtherChannel com conexão ao SWM-101.
+- **SW-103**: Configuração de VLANs, trunks, e EtherChannel com conexão ao SWM-101.
+- **SWM-101**: Switch principal com roteamento inter-VLAN e interface de roteamento para conexão com o roteador RT-Campus01.
 
-SW-101(config)#interface range FastEthernet 0/9 - 10
-SW-101(config-if-range)#channel-group 2 mode active
-SW-101(config-if-range)#exit
-SW-101(config)#interface port-channel 2
-SW-101(config-if)#switchport mode trunk 
-SW-101(config-if)#switchport trunk allowed vlan 1,10,20,99
+### Switch sob **RT-Campus02**
 
-SW-101(config-if)#interface range FastEthernet 0/1 - 6
-SW-101(config-if-range)#switchport mode access 
+- **SW-201**: Configuração das VLANs e interface para conexão com o roteador RT-Campus02.
 
-SW-101(config)#interface range FastEthernet 0/1 - 3
-SW-101(config-if-range)#switchport access vlan 10
-SW-101(config-if-range)#exit
+As configurações completas dos equipamentos estão disponíveis na pasta `config/`.
 
+## Configurações de Dispositivos
 
-SW-101(config)#interface range FastEthernet 0/4 - 6
-SW-101(config-if-range)#switchport access vlan 20
-SW-101(config-if-range)#exit
+As configurações para cada dispositivo estão organizadas na pasta `config/`:
 
-SW-101(config)#do wr
+- [SW-101 Config](config/SW-101.txt)
+- [SW-102 Config](config/SW-102.txt)
+- [SW-103 Config](config/SW-103.txt)
+- [SWM-101 Config](config/SWM-101.txt)
+- [RT-Campus01 Config](config/RT-Campus01.txt)
+- [RT-Campus02 Config](config/RT-Campus02.txt)
+- [SW-201 Config](config/SW-201.txt)
 
+## Notas
 
-Config Switch 102
+- O laboratório foi testado e foi possível a conexão via SSH de um PC sob a rede do RT-Campus02 com um SW da rede do RT-Campus01, indicando que as configurações de roteamento e de VLANs estão corretas, permitindo a comunicação segura entre as redes através do protocolo SSH.
+- O ping entre todos os dispositivos se mostrou totalmente funcional, indicando que a conectividade de rede está estabelecida corretamente e que não há problemas de roteamento ou bloqueios de comunicação entre os dispositivos.
+- Todos os dispositivos finais receberam IP dinamicamente de acordo com sua VLAN, indicando o correto funcionamento do servidor DHCPv4.
 
-enable
-configure terminal
+### Ping com sucesso:
+<div align='left'>
+   <img src='https://github.com/user-attachments/assets/713b1c15-39d4-46d2-abbe-9376dda1438d' height='250'/>
+<div/><br> 
 
-hostname SW-102
+### Acesso remoto via SSH ao Switch da rede vizinha:
 
-enable secret cisco
+<div align='left'>
+   <img src='https://github.com/user-attachments/assets/43bd139e-9b63-4d48-bef5-3947a59329d1' height='250'/>
+<div/><br> 
 
-line console 0
-logging synchronous 
-password cisco
-login
-exit
+### IPv4 atribuido dinaimcamente de forma correta aos endpoints:
 
-ip domain-name cisco.com
-ip ssh version 2
-crypto key generate rsa general-keys modulus 768
+<div align='left'>
+   <img src='https://github.com/user-attachments/assets/934c63c4-3006-4ca7-b26a-891cdb212417' height='250'/>
+<div/><br> 
 
-line vty 0 4
-password cisco
-login
-transport input ssh
-exit
-
-service password-encryption
-
-banner motd /####################################
-Acesso permitido somente para pessoas autorizadas.
-####################################/
-
-vlan 10
-name financeiro
-exit
-
-vlan 20
-name rh
-exit
-
-vlan 99
-name mgmt
-exit
-
-interface vlan 99
-ip address 192.168.99.102 255.255.255.0
-
-interface range FastEthernet 0/2 - 3
-channel-group 1 mode active
-exit
-
-interface port-channel 1
-switchport mode trunk
-switchport trunk allowed vlan 1,10,20,99
-
-interface range FastEthernet 0/1, FastEthernet 0/4
-channel-group 3 mode active
-description Trunk to SWM-101
-exit
-
-interface port-channel 3
-switchport mode trunk 
-switchport trunk allowed vlan 1,10,20,99
-
-do wr
-
-
-Config Switch 103
-
-enable
-configure terminal
-
-hostname SW-103
-
-enable secret cisco
-
-line console 0
-logging synchronous 
-password cisco
-login
-exit
-
-ip domain-name cisco.com
-ip ssh version 2
-crypto key generate rsa general-keys modulus 768
-
-line vty 0 4
-password cisco
-login
-transport input ssh
-exit
-
-service password-encryption
-
-banner motd /####################################
-Acesso permitido somente para pessoas autorizadas.
-####################################/
-
-vlan 10
-name financeiro
-exit
-
-vlan 20
-name rh
-exit
-
-vlan 99
-name mgmt
-exit
-
-interface vlan 99
-ip address 192.168.99.103 255.255.255.0
-
-interface range FastEthernet 0/1, FastEthernet 0/3
-channel-group 2 mode active
-description Trunk to SW-101
-exit
-
-interface port-channel 2
-switchport mode trunk
-switchport trunk allowed vlan 1,10,20,99
-
-interface range FastEthernet 0/2, FastEthernet 0/4
-channel-group 4 mode active
-description Trunk to SWM-101
-exit
-
-interface port-channel 4
-switchport mode trunk 
-switchport trunk allowed vlan 1,10,20,99
-exit
-
-do wr
-
-Config Switch SWM-101 
-
-enable
-configure terminal
-
-hostname SWM-101
-
-enable secret cisco
-
-line console 0
-logging synchronous 
-password cisco
-login
-exit
-
-ip domain-name cisco.com
-ip ssh version 2
-crypto key generate rsa general-keys modulus 768
-
-line vty 0 4
-password cisco
-login
-transport input ssh
-exit
-
-service password-encryption
-
-banner motd /####################################
-Acesso permitido somente para pessoas autorizadas.
-####################################/
-
-vlan 10
-name financeiro
-exit
-
-vlan 20
-name rh
-exit
-
-vlan 99
-name mgmt
-exit
-
-interface vlan 99
-ip address 192.168.99.104 255.255.255.0
-no shut
-exit
-
-interface range FastEthernet 0/1, FastEthernet 0/4
-channel-group 3 mode active
-description Trunk to SW-102
-exit
-
-interface port-channel 3
-switchport trunk encapsulation dot1q
-switchport mode trunk
-switchport trunk allowed vlan 1,10,20,99
-
-interface range FastEthernet 0/2, FastEthernet 0/5
-channel-group 4 mode active
-description Trunk to SWM-103
-exit
-
-interface port-channel 4
-switchport trunk encapsulation dot1q
-switchport mode trunk 
-switchport trunk allowed vlan 1,10,20,99
-exit
-
-interface vlan 10
-description Default Gateway SVI for 192.168.10.0/24
-ip add 192.168.10.1 255.255.255.0
-no shut
-exit
-
-interface vlan 20
-description Default Gateway SVI for 192.168.20.0/24
-ip add 192.168.20.1 255.255.255.0
-no shut
-exit
-
-ip routing 
-
-interface GigabitEthernet 0/1
-description routed Port Link to RT-CAMPUS01
-no switchport
-ip address 192.168.1.1 255.255.255.252
-no shut
-exit
-
-ip route 192.168.40.0 255.255.255.000 192.168.1.2
-ip route 192.168.30.0 255.255.255.000 192.168.1.2
-ip route 0.0.0.0 0.0.0.0 192.168.1.2
-
-interface vlan 10
-ip helper-address 192.168.1.2
-
-interface vlan 20
-ip helper-address 192.168.1.2
-exit
-
-do wr
-
-SW-201
-
-enable
-configure terminal
-hostname SW-201
-enable secret cisco
-
-line console 0
-logging synchronous
-password cisco
-login
-exit
-
-ip domain-name cisco.com
-ip ssh version 2
-crypto key generate rsa general-keys modulus 768
-line vty 0 4
-password cisco
-login
-transport input ssh
-exit
-
-service password-encryption
-
-banner motd /####################################
-Acesso permitido somente para pessoas autorizadas.
-####################################/
-
-vlan 30
-name administrativo
-exit
-vlan 40
-name alunos
-exit
-vlan 99
-name mgmt
-exit
-
-interface vlan 99
-ip address 192.168.99.201 255.255.255.0
-no shutdown
-exit
-
-interface FastEthernet 0/4
-switchport mode trunk
-switchport trunk allowed vlan 1,30,40,99
-exit
-
-interface range FastEthernet 0/1 - 2
-switchport access vlan 30
-exit
-
-interface range FastEthernet 0/3, FastEthernet 0/5 , FastEthernet 0/6
-switchport access vlan 40
-exit
-
-do wr
-
-Config do RT 1
-
-enable
-configure terminal
-
-hostname RT-Campus01
-
-enable secret cisco
-
-line console 0
-logging synchronous 
-password cisco
-login
-exit
-
-ip domain-name cisco.com
-ip ssh version 2
-crypto key generate rsa general-keys modulus 768
-
-line vty 0 4
-password cisco
-login
-transport input ssh
-exit
-
-service password-encryption
-
-banner motd /####################################
-Acesso permitido somente para pessoas autorizadas.
-####################################/
-
-
-interface G0/0/0
-ip add 192.168.1.2 255.255.255.252
-no shut
-exit
-
-interface gigabitEthernet 0/0/1
-ip add 10.0.10.1 255.255.255.000
-no shut
-
-RT-Campus01(config-if)#
-%LINK-5-CHANGED: Interface GigabitEthernet0/0/1, changed state to up
-
-RT-Campus01(config-if)#exit
-
-ip route 192.168.10.0 255.255.255.000 192.168.1.1
-ip route 192.168.20.0 255.255.255.000 192.168.1.1
-ip route 192.168.99.0 255.255.255.000 192.168.1.1
-ip route 192.168.40.0 255.255.255.000 10.0.10.2
-ip route 192.168.30.0 255.255.255.000 10.0.10.2
-
-ip dhcp excluded-address 192.168.30.1
-ip dhcp excluded-address 192.168.40.1
-ip dhcp excluded-address 192.168.20.1
-ip dhcp excluded-address 192.168.10.1
-
-ip dhcp pool DHCP-VLAN-40
-network 192.168.40.0 255.255.255.0
-default-router 192.168.40.1
-
-ip dhcp pool DHCP-VLAN-30
-network 192.168.30.0 255.255.255.0
-default-router 192.168.30.1
-
-ip dhcp pool DHCP-VLAN-20
-network 192.168.20.0 255.255.255.0
-default-router 192.168.20.1
-
-ip dhcp pool DHCP-VLAN-10
-network 192.168.10.0 255.255.255.0
-default-router 192.168.10.1
-
-
-end 
-
-do wr
-
-
-Config do RT 2
-
-enable
-configure terminal
-
-hostname RT-Campus02
-
-enable secret cisco
-
-line console 0
-logging synchronous 
-password cisco
-login
-exit
-
-ip domain-name cisco.com
-ip ssh version 2
-crypto key generate rsa general-keys modulus 768
-
-line vty 0 4
-password cisco
-login
-transport input ssh
-exit
-
-service password-encryption
-
-banner motd /####################################
-Acesso permitido somente para pessoas autorizadas.
-####################################/
-
-
-interface G0/0/1.30
-description Default Gateway for VLAN 30
-encapsulation dot1Q 30
-ip add 192.168.30.1 255.255.255.0
-exit
-
-interface G0/0/1.40
-description Default Gateway for VLAN 40
-encapsulation dot1Q 40
-ip add 192.168.40.1 255.255.255.0
-exit
-
-interface G0/0/1.99
-description Default Gateway for VLAN 99
-encapsulation dot1Q 99
-ip add 192.168.99.1 255.255.255.0
-exit
-
-interface G0/0/1
-description Trunk link to SW-201
-no shut
-exit 
-
-interface gigabitEthernet 0/0/0
-ip address 10.0.10.2 255.255.255.000
-no shut
-
-exit
-
-ip route 192.168.10.0 255.255.255.000 10.0.10.1
-ip route 192.168.20.0 255.255.255.000 10.0.10.1
-ip route 0.0.0.0 0.0.0.0 10.0.10.1
-
-interface G0/0/1.40
-ip helper-address 10.0.10.1
-
-interface G0/0/1.30
-ip helper-address 10.0.10.1
-
-
-do wr
-
+Sinta-se à vontade para contribuir com sugestões de melhorias.
