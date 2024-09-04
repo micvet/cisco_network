@@ -1,0 +1,73 @@
+enable
+configure terminal
+
+hostname RT-Campus01
+
+enable secret cisco
+
+line console 0
+logging synchronous 
+password cisco
+login local
+exit
+
+ip domain-name cisco.com
+ip ssh version 2
+crypto key generate rsa general-keys modulus 768
+username admin secret cisco
+
+line vty 0 4
+password cisco
+login local
+transport input ssh
+exit
+
+service password-encryption
+
+banner motd /####################################
+Acesso permitido somente para pessoas autorizadas.
+####################################/
+
+
+interface G0/0/0
+ip add 192.168.1.2 255.255.255.252
+no shut
+exit
+
+interface gigabitEthernet 0/0/1
+ip add 10.0.10.1 255.255.255.000
+no shut
+
+RT-Campus01(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0/1, changed state to up
+
+RT-Campus01(config-if)#exit
+
+ip route 192.168.10.0 255.255.255.000 192.168.1.1
+ip route 192.168.20.0 255.255.255.000 192.168.1.1
+ip route 192.168.99.0 255.255.255.000 192.168.1.1
+ip route 192.168.40.0 255.255.255.000 10.0.10.2
+ip route 192.168.30.0 255.255.255.000 10.0.10.2
+
+ip dhcp excluded-address 192.168.30.1
+ip dhcp excluded-address 192.168.40.1
+ip dhcp excluded-address 192.168.20.1
+ip dhcp excluded-address 192.168.10.1
+
+ip dhcp pool DHCP-VLAN-40
+network 192.168.40.0 255.255.255.0
+default-router 192.168.40.1
+
+ip dhcp pool DHCP-VLAN-30
+network 192.168.30.0 255.255.255.0
+default-router 192.168.30.1
+
+ip dhcp pool DHCP-VLAN-20
+network 192.168.20.0 255.255.255.0
+default-router 192.168.20.1
+
+ip dhcp pool DHCP-VLAN-10
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+
+do wr
