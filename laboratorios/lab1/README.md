@@ -15,7 +15,7 @@ Este laboratório foi criado para demonstrar a configuração de uma rede, usand
 ## Topologia
 
 <div align='left'>
-   <img src='https://github.com/user-attachments/assets/40e6c1e5-5b00-4820-aed0-975c1e406069' height='550'/>
+   <img src='https://github.com/user-attachments/assets/e2dcdeb5-4d1e-4c87-afea-929406a1ae89' height='550'/>
 <div/><br> 
 
 ## Equipamentos e Configurações
