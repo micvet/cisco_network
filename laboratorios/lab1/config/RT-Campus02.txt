@@ -1,0 +1,74 @@
+enable
+configure terminal
+
+hostname RT-Campus02
+
+enable secret cisco
+
+line console 0
+logging synchronous 
+password cisco
+login local
+exit
+
+ip domain-name cisco.com
+ip ssh version 2
+crypto key generate rsa general-keys modulus 768
+username admin secret cisco
+
+line vty 0 4
+password cisco
+login local
+transport input ssh
+exit
+
+service password-encryption
+
+banner motd /####################################
+Acesso permitido somente para pessoas autorizadas.
+####################################/
+
+
+interface G0/0/1.30
+description Default Gateway for VLAN 30
+encapsulation dot1Q 30
+ip add 192.168.30.1 255.255.255.0
+exit
+
+interface G0/0/1.40
+description Default Gateway for VLAN 40
+encapsulation dot1Q 40
+ip add 192.168.40.1 255.255.255.0
+exit
+
+interface G0/0/1.98
+description Default Gateway for VLAN 98
+encapsulation dot1Q 98
+ip add 192.168.98.1 255.255.255.0
+exit
+
+interface G0/0/1
+description Trunk link to SW-201
+exit
+
+no shut
+exit 
+
+interface gigabitEthernet 0/0/0
+ip address 10.0.10.2 255.255.255.000
+no shut
+
+exit
+
+ip route 192.168.10.0 255.255.255.000 10.0.10.1
+ip route 192.168.20.0 255.255.255.000 10.0.10.1
+ip route 0.0.0.0 0.0.0.0 10.0.10.1
+
+interface G0/0/1.40
+ip helper-address 10.0.10.1
+
+interface G0/0/1.30
+ip helper-address 10.0.10.1
+exit
+
+do wr
