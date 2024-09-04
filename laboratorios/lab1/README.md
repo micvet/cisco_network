@@ -1,4 +1,4 @@
-# Laboratório de Redes com Packet Tracer
+# Laboratório 01
 
 ## Descrição
 Este laboratório foi criado para demonstrar a configuração de uma rede, usando o Cisco Packet Tracer. O lab inclui a criaçao de VLANs, configuração do roteamento inter-VLAN, trunking, SSH para acesso seguro e configuração de servidor DHCPv4.
