@@ -15,7 +15,7 @@ Este laboratório foi criado para demonstrar a configuração de uma rede, usand
 ## Topologia
 
 <div align='left'>
-   <img src='https://github.com/user-attachments/assets/40e6c1e5-5b00-4820-aed0-975c1e406069' height='250'/>
+   <img src='https://github.com/user-attachments/assets/40e6c1e5-5b00-4820-aed0-975c1e406069' height='550'/>
 <div/><br> 
 
 ## Equipamentos e Configurações
@@ -62,13 +62,13 @@ As configurações para cada dispositivo estão organizadas na pasta `config/`:
 
 ### Ping com sucesso:
 <div align='left'>
-   <img src='https://github.com/user-attachments/assets/713b1c15-39d4-46d2-abbe-9376dda1438d' height='250'/>
+   <img src='https://github.com/user-attachments/assets/713b1c15-39d4-46d2-abbe-9376dda1438d' height='550'/>
 <div/><br> 
 
 ### Acesso remoto via SSH ao Switch da rede vizinha:
 
 <div align='left'>
-   <img src='https://github.com/user-attachments/assets/43bd139e-9b63-4d48-bef5-3947a59329d1' height='250'/>
+   <img src='https://github.com/user-attachments/assets/43bd139e-9b63-4d48-bef5-3947a59329d1' height='550'/>
 <div/><br> 
 
 ### IPv4 atribuido dinaimcamente de forma correta aos endpoints:
