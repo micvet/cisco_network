@@ -1,0 +1,60 @@
+enable
+configure terminal
+hostname SW-201
+enable secret cisco
+
+line console 0
+logging synchronous
+password cisco
+login local
+exit
+
+ip domain-name cisco.com
+ip ssh version 2
+crypto key generate rsa general-keys modulus 768
+username admin secret cisco
+line vty 0 4
+password cisco
+login local
+transport input ssh
+exit
+
+service password-encryption
+
+banner motd /####################################
+Acesso permitido somente para pessoas autorizadas.
+####################################/
+
+vlan 30
+name administrativo
+exit
+vlan 40
+name alunos
+exit
+
+vlan 98
+name mgmt
+exit
+
+interface vlan 98
+ip address 192.168.98.201 255.255.255.0
+no shutdown
+exit
+
+interface FastEthernet 0/4
+switchport mode trunk
+switchport trunk allowed vlan 1,30,40,98
+exit
+
+interface range FastEthernet 0/1 - 2
+switchport access vlan 30
+exit
+
+
+interface range FastEthernet 0/3, FastEthernet 0/5 , FastEthernet 0/6
+switchport access vlan 40
+exit
+
+ip default-gateway 192.168.98.1
+
+do wr
