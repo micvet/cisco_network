@@ -11,5 +11,4 @@ Este repositório contém meus laboratórios de redes realizados no Packet Trace
    <img src='https://github.com/user-attachments/assets/e2dcdeb5-4d1e-4c87-afea-929406a1ae89' height='550'/>
 <div/><br> 
 
-#### Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para sugestões de melhorias.
+
