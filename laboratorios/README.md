@@ -2,8 +2,8 @@
 
 Este repositório contém meus laboratórios de redes realizados no Packet Tracer. Cada laboratório está organizado em uma pasta separada, contendo os arquivos e configurações utilizadas.
 
-## [Laboratório 1](https://github.com/micvet/cisco_network/tree/main/laboratorios/lab1) - Configuração de Switches e Roteadores
-- Configurar o hostname, senhas de acesso, SSH, EtherChannel, configurar VLANs, links de trunk, roteamento inter-VLAN, servidor DHCPv4 e testar a conectividade entre dispositivos.
+## [Laboratório 1](https://github.com/micvet/cisco_network/tree/main/laboratorios/lab1)
+Objetivo: Configurar o hostname, senhas de acesso, SSH, EtherChannel, configurar VLANs, links de trunk, roteamento inter-VLAN, servidor DHCPv4 e testar a conectividade entre dispositivos.
 
 ### Topologia
 
